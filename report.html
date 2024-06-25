@@ -205,15 +205,16 @@
           
             </section>
             <div class="chart-container">
-                <canvas id="growthChart"></canvas>
+                <canvas id="growthChart" width="400" height="200"></canvas>
             </div>
             <div class="chart-container">
-                <canvas id="userChart"></canvas>
+                <canvas id="userChart" width="400" height="200"></canvas>
             </div>
             <div class="chart-container">
-                <canvas id="taskChart"></canvas>
+                 <canvas id="taskChart" width="400" height="200"></canvas>
             </div>
-        
+   
+
           </article>
         </section>
 
@@ -225,13 +226,19 @@
         var weeklyLabels = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9", "Week 10", "Week 11"];
         
         // Data for Growth Report
-        var weeklyGrowth = [1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0];
+        var weeklyGrowth = [1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3]; // Reflects growth over time
         
-        // Data for Number of Users Report
-        var weeklyUsers = [20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        // Data for Number of Accounts Report
+        var weeklyAccounts = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220]; // Accumulated accounts
+        
+        // Data for Number of Views Report
+        var weeklyViews = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 653]; // Accumulated views
+        
+        // Data for Number of Engaged Users Report
+        var weeklyEngagedUsers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 73]; // Accumulated engaged users
         
         // Data for Number of Tasks Report
-        var weeklyTasks = [4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var weeklyTasks = [4, 4, 4, 4, 4, 4, 4, 6, 8, 8, 8]; // Reflects completed tasks over time
 
         new Chart("growthChart", {
             type: "bar",
@@ -246,7 +253,7 @@
                 }]
             },
             options: {
-                legend: { display: false },
+                legend: { display: true },
                 scales: {
                     xAxes: [{ gridLines: { display: false } }],
                     yAxes: [{ ticks: { beginAtZero: true } }]
@@ -259,10 +266,24 @@
             data: {
                 labels: weeklyLabels,
                 datasets: [{
-                    label: "Number of Users",
-                    data: weeklyUsers,
+                    label: "Number of Accounts",
+                    data: weeklyAccounts,
                     backgroundColor: "rgba(75, 192, 192, 0.4)",
                     borderColor: "rgba(75, 192, 192, 1)",
+                    borderWidth: 1,
+                    fill: true
+                }, {
+                    label: "Number of Views",
+                    data: weeklyViews,
+                    backgroundColor: "rgba(153, 102, 255, 0.4)",
+                    borderColor: "rgba(153, 102, 255, 1)",
+                    borderWidth: 1,
+                    fill: true
+                }, {
+                    label: "Number of Engaged Users",
+                    data: weeklyEngagedUsers,
+                    backgroundColor: "rgba(255, 159, 64, 0.4)",
+                    borderColor: "rgba(255, 159, 64, 1)",
                     borderWidth: 1,
                     fill: true
                 }]
