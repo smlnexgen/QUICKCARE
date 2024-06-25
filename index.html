@@ -211,14 +211,14 @@
                   <div class="icon">
                     <i class="fas fa-exchange-alt"></i>
                   </div>
-                  <p class="value">6</p>
+                  <p class="value">50</p>
                 </div>
               </div>
               <div class="box bg-cyan">
                 <p>Current/Ongoing</p>
                 <div class="icon-value">
                   <div class="icon"><i class="fab fa-forumbee"></i></div>
-                  <p class="value">1</p>
+                  <p class="value">2</p>
                 </div>
               </div>
               <div class="box bg-ash">
@@ -227,7 +227,7 @@
                   <div class="icon">
                     <i class="fas fa-chart-pie"></i>
                   </div>
-                  <p class="value">1</p>
+                  <p class="value">20</p>
                 </div>
               </div>
               <div class="box bg-deep-blue">
@@ -274,16 +274,16 @@
       }
     </script>
   <script>
-    var weeklyLabels = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9", "Week 10", "Week 11"];
-    var weeklyGrowth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var periodlyLabels = ["period 1", "period2", "period3", "period 4", "period 5", "period 6", "period 7", "period 8", "period 9", "period 10", "period 11"];
+    var periodlyGrowth = [4, 8, 28, 39, 58, 82, 132, 189, 200, 208, 220];
 
     new Chart("myChart", {
         type: "bar",
         data: {
-            labels: weeklyLabels,
+            labels: periodlyLabels,
             datasets: [{
-                label: "Weekly Growth",
-                data: weeklyGrowth,
+                label: "periodly Growth",
+                data: periodlyGrowth,
                 backgroundColor: "rgba(54, 162, 235, 0.6)",
                 borderColor: "rgba(54, 162, 235, 1)",
                 borderWidth: 1
